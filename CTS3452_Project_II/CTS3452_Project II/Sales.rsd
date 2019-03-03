@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>AdventureWorks2017</DataSourceReference>
+      <CommandText>SELECT        YEAR(Sales.SalesOrderHeader.OrderDate) AS OrderYear, Sales.SalesTerritory.TerritoryID, Sales.SalesTerritory.Name AS Territory, SUM(Sales.SalesOrderDetail.LineTotal) AS Sales, Production.Product.Name AS Product, 
+                         Production.ProductSubcategory.Name AS Subcategory, Production.ProductCategory.Name AS Category
+FROM            Production.ProductSubcategory INNER JOIN
+                         Production.ProductCategory ON Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.ProductCategoryID AND 
+                         Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.ProductCategoryID INNER JOIN
+                         Production.Product ON Production.ProductSubcategory.ProductSubcategoryID = Production.Product.ProductSubcategoryID INNER JOIN
+                         Sales.SalesOrderHeader INNER JOIN
+                         Sales.SalesOrderDetail ON Sales.SalesOrderHeader.SalesOrderID = Sales.SalesOrderDetail.SalesOrderID ON Production.Product.ProductID = Sales.SalesOrderDetail.ProductID AND 
+                         Production.Product.ProductID = Sales.SalesOrderDetail.ProductID AND Production.Product.ProductID = Sales.SalesOrderDetail.ProductID INNER JOIN
+                         Sales.SalesTerritory ON Sales.SalesOrderHeader.TerritoryID = Sales.SalesTerritory.TerritoryID AND Sales.SalesOrderHeader.TerritoryID = Sales.SalesTerritory.TerritoryID AND 
+                         Sales.SalesOrderHeader.TerritoryID = Sales.SalesTerritory.TerritoryID AND Sales.SalesOrderHeader.TerritoryID = Sales.SalesTerritory.TerritoryID
+GROUP BY YEAR(Sales.SalesOrderHeader.OrderDate), Sales.SalesTerritory.TerritoryID, Sales.SalesTerritory.Name, Production.Product.Name, Production.ProductSubcategory.Name, Production.ProductCategory.Name</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="OrderYear">
+        <DataField>OrderYear</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TerritoryID">
+        <DataField>TerritoryID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Territory">
+        <DataField>Territory</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Sales">
+        <DataField>Sales</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Product">
+        <DataField>Product</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Subcategory">
+        <DataField>Subcategory</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Category">
+        <DataField>Category</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

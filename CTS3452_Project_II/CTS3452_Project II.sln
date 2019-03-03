@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "CTS3452_Project II", "CTS3452_Project II\CTS3452_Project II.rptproj", "{AC42A0FC-8925-40BC-8AD2-DFA6F21981E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC42A0FC-8925-40BC-8AD2-DFA6F21981E0}.Debug|Default.ActiveCfg = Debug
+		{AC42A0FC-8925-40BC-8AD2-DFA6F21981E0}.Debug|Default.Build.0 = Debug
+		{AC42A0FC-8925-40BC-8AD2-DFA6F21981E0}.Debug|Default.Deploy.0 = Debug
+		{AC42A0FC-8925-40BC-8AD2-DFA6F21981E0}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{AC42A0FC-8925-40BC-8AD2-DFA6F21981E0}.DebugLocal|Default.Build.0 = DebugLocal
+		{AC42A0FC-8925-40BC-8AD2-DFA6F21981E0}.Release|Default.ActiveCfg = Release
+		{AC42A0FC-8925-40BC-8AD2-DFA6F21981E0}.Release|Default.Build.0 = Release
+		{AC42A0FC-8925-40BC-8AD2-DFA6F21981E0}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {154BF596-0A0F-497C-9D40-42E897407C8A}
+	EndGlobalSection
+EndGlobal
